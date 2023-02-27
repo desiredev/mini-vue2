@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <p>{{count}}</p>
+    <p>{{count}}</p>
+    <p k-text="count"></p>
+    <p k-html="desc"></p> -->
+  </div>
+  <script src="./kvue.js"></script>
+  <script>
+    const app = new KVue({
+      el: '#app',
+      data: {
+        count: 1,
+        // desc: '<p style="color:red;fontSize:30px">demaxiya</p>'
+      },
+      render(h) {
+        return h('div', {id : 'app'}, [
+          h('p', null, this.count + '')
+        ])
+      }
+    })
+    setInterval(() => {
+      app.count++;
+    }, 1000);
+  </script>
+</body>
+</html>
